@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from '../Components/Layout'
 import PageList from '../Components/PagesList'
+import ChroniquesList from '../Components/Chronique/ChroniquesList'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <div className="my-4">
           <PageList/>
         </div>
+        <ChroniquesList/>
       </Layout>
     </div>
   )

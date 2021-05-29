@@ -43,7 +43,7 @@ const ChroniquesList = () => {
                             {/* Title */}
                             <div className="flex-grow m-auto text-mirage-500 text-center mx-2">
                                 <div>
-                                    <h1 className="text-lg font-semibold font-sans"> {chronique.titreDeLaChronique} </h1>
+                                    <h1 className="text-md font-regular font-medium"> {chronique.titreDeLaChronique} </h1>
                                 </div>
                             </div>
                             {/* Description */}

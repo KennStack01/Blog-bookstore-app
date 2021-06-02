@@ -10,7 +10,7 @@ const boutique = () => {
                     <h1 className="text-2xl font-bold">Boutiques de Livres</h1>
                     <p className="text-sm"> Commandez des Livres </p>
                 </div>
-                <div className="my-4">
+                <div className="my-4 sticky top-0 bg-white pb-3">
                     <PageList/>
                 </div>
             </Layout>

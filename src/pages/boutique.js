@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../Components/Layout'
 import PageList from '../Components/PagesList'
+import Bookstore from '../Components/Bookstore/Bookstore'
 
 const boutique = () => {
     return (
@@ -13,6 +14,7 @@ const boutique = () => {
                 <div className="my-4 sticky top-0 bg-white pb-3">
                     <PageList/>
                 </div>
+                <Bookstore/>
             </Layout>
         </div>
     )

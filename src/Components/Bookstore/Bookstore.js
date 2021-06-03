@@ -41,7 +41,7 @@ const Bookstore = () => {
                             {/* Title */}
                             <div className="flex-grow m-auto text-mirage-500 text-center mx-1">
                                 <div>
-                                    <h1 className="text-md md:text-lg font-semibold mt-1"> {book.titreDuLivre} </h1>
+                                    <h1 className="text-md md:text-lg font-normal mt-1"> {book.titreDuLivre} </h1>
                                 </div>
                             </div>
                             {/* Description */}
@@ -59,13 +59,13 @@ const Bookstore = () => {
                             </div>
 
                             <div className="flex flex-row justify-between mt-2">
-                                <div className="flex flex-row font-semibold text-xl rounded-lg mx-2 px-3 pt-1 text-white bg-mirage-500">
+                                <div className="flex flex-row font-normal text-xl rounded-lg mx-2 px-3 pt-1 text-white bg-mirage-500">
                                     <p>$</p>
                                     <div>
                                         { book.prixDuManuel }
                                     </div>
                                 </div>
-                                <button className="px-3 text-2xl text-white font-semibold rounded-l-lg bg-yellow-600">
+                                <button className="px-3 text-2xl text-white font-normal rounded-l-lg bg-yellow-600">
                                     Acheter
                                 </button>
                             </div>
@@ -82,7 +82,7 @@ const Bookstore = () => {
                             {/* Title */}
                             <div className="flex-grow m-auto text-mirage-500 text-center mx-1">
                                 <div>
-                                    <h1 className="text-md md:text-lg font-semibold mt-1"> {book.titreDuLivre} </h1>
+                                    <h1 className="text-md md:text-lg font-normal mt-1"> {book.titreDuLivre} </h1>
                                 </div>
                             </div>
                             {/* Description */}
@@ -100,13 +100,13 @@ const Bookstore = () => {
                             </div>
 
                             <div className="flex flex-row justify-between mt-2">
-                                <div className="flex flex-row font-semibold text-xl rounded-lg mx-2 px-3 pt-1 text-white bg-mirage-500">
+                                <div className="flex flex-row font-normal text-xl rounded-lg mx-2 px-3 pt-1 text-white bg-mirage-500">
                                     <p>$</p>
                                     <div>
                                         { book.prixDuManuel }
                                     </div>
                                 </div>
-                                <button className="px-3 text-2xl text-white font-semibold rounded-l-lg bg-yellow-600">
+                                <button className="px-3 text-2xl text-white font-normal rounded-l-lg bg-yellow-600">
                                     Acheter
                                 </button>
                             </div>
@@ -123,7 +123,7 @@ const Bookstore = () => {
                             {/* Title */}
                             <div className="flex-grow m-auto text-mirage-500 text-center mx-1">
                                 <div>
-                                    <h1 className="text-md md:text-lg font-semibold mt-1"> {book.titreDuLivre} </h1>
+                                    <h1 className="text-md md:text-lg font-normal mt-1"> {book.titreDuLivre} </h1>
                                 </div>
                             </div>
                             {/* Description */}
@@ -141,13 +141,13 @@ const Bookstore = () => {
                             </div>
 
                             <div className="flex flex-row justify-between mt-2">
-                                <div className="flex flex-row font-semibold text-xl rounded-lg mx-2 px-3 pt-1 text-white bg-mirage-500">
+                                <div className="flex flex-row font-normal text-xl rounded-lg mx-2 px-3 pt-1 text-white bg-mirage-500">
                                     <p>$</p>
                                     <div>
                                         { book.prixDuManuel }
                                     </div>
                                 </div>
-                                <button className="px-3 text-2xl text-white font-semibold rounded-l-lg bg-yellow-600">
+                                <button className="px-3 text-2xl text-white font-normal rounded-l-lg bg-yellow-600">
                                     Acheter
                                 </button>
                             </div>
@@ -164,7 +164,7 @@ const Bookstore = () => {
                             {/* Title */}
                             <div className="flex-grow m-auto text-mirage-500 text-center mx-1">
                                 <div>
-                                    <h1 className="text-md md:text-lg font-semibold mt-1"> {book.titreDuLivre} </h1>
+                                    <h1 className="text-md md:text-lg font-normal mt-1"> {book.titreDuLivre} </h1>
                                 </div>
                             </div>
                             {/* Description */}
@@ -182,13 +182,13 @@ const Bookstore = () => {
                             </div>
 
                             <div className="flex flex-row justify-between mt-2">
-                                <div className="flex flex-row font-semibold text-xl rounded-lg mx-2 px-3 pt-1 text-white bg-mirage-500">
+                                <div className="flex flex-row font-normal text-xl rounded-lg mx-2 px-3 pt-1 text-white bg-mirage-500">
                                     <p>$</p>
                                     <div>
                                         { book.prixDuManuel }
                                     </div>
                                 </div>
-                                <button className="px-3 text-2xl text-white font-semibold rounded-l-lg bg-yellow-600">
+                                <button className="px-3 text-2xl text-white font-normal rounded-l-lg bg-yellow-600">
                                     Acheter
                                 </button>
                             </div>
@@ -205,7 +205,7 @@ const Bookstore = () => {
                             {/* Title */}
                             <div className="flex-grow m-auto text-mirage-500 text-center mx-1">
                                 <div>
-                                    <h1 className="text-md md:text-lg font-semibold mt-1"> {book.titreDuLivre} </h1>
+                                    <h1 className="text-md md:text-lg font-normal mt-1"> {book.titreDuLivre} </h1>
                                 </div>
                             </div>
                             {/* Description */}
@@ -223,13 +223,13 @@ const Bookstore = () => {
                             </div>
 
                             <div className="flex flex-row justify-between mt-2">
-                                <div className="flex flex-row font-semibold text-xl rounded-lg mx-2 px-3 pt-1 text-white bg-mirage-500">
+                                <div className="flex flex-row font-normal text-xl rounded-lg mx-2 px-3 pt-1 text-white bg-mirage-500">
                                     <p>$</p>
                                     <div>
                                         { book.prixDuManuel }
                                     </div>
                                 </div>
-                                <button className="px-3 text-2xl text-white font-semibold rounded-l-lg bg-yellow-600">
+                                <button className="px-3 text-2xl text-white font-normal rounded-l-lg bg-yellow-600">
                                     Acheter
                                 </button>
                             </div>
@@ -246,7 +246,7 @@ const Bookstore = () => {
                             {/* Title */}
                             <div className="flex-grow m-auto text-mirage-500 text-center mx-1">
                                 <div>
-                                    <h1 className="text-md md:text-lg font-semibold mt-1"> {book.titreDuLivre} </h1>
+                                    <h1 className="text-md md:text-lg font-normal mt-1"> {book.titreDuLivre} </h1>
                                 </div>
                             </div>
                             {/* Description */}
@@ -264,13 +264,13 @@ const Bookstore = () => {
                             </div>
 
                             <div className="flex flex-row justify-between mt-2">
-                                <div className="flex flex-row font-semibold text-xl rounded-lg mx-2 px-3 pt-1 text-white bg-mirage-500">
+                                <div className="flex flex-row font-normal text-xl rounded-lg mx-2 px-3 pt-1 text-white bg-mirage-500">
                                     <p>$</p>
                                     <div>
                                         { book.prixDuManuel }
                                     </div>
                                 </div>
-                                <button className="px-3 text-2xl text-white font-semibold rounded-l-lg bg-yellow-600">
+                                <button className="px-3 text-2xl text-white font-normal rounded-l-lg bg-yellow-600">
                                     Acheter
                                 </button>
                             </div>

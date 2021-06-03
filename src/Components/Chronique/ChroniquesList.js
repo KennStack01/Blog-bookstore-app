@@ -43,7 +43,7 @@ const ChroniquesList = () => {
                             {/* Title */}
                             <div className="flex-grow m-auto text-mirage-500 text-center mx-1">
                                 <div>
-                                    <h1 className="text-md md:text-lg font-semibold mt-1"> {chronique.titreDeLaChronique} </h1>
+                                    <h1 className="text-md md:text-lg font-normal mt-1"> {chronique.titreDeLaChronique} </h1>
                                 </div>
                             </div>
                             {/* Description */}
@@ -78,7 +78,7 @@ const ChroniquesList = () => {
                             {/* Title */}
                             <div className="flex-grow m-auto text-mirage-500 text-center mx-1">
                                 <div>
-                                    <h1 className="text-md md:text-lg font-semibold mt-1"> {chronique.titreDeLaChronique} </h1>
+                                    <h1 className="text-md md:text-lg font-normal mt-1"> {chronique.titreDeLaChronique} </h1>
                                 </div>
                             </div>
                             {/* Description */}
@@ -113,7 +113,7 @@ const ChroniquesList = () => {
                             {/* Title */}
                             <div className="flex-grow m-auto text-mirage-500 text-center mx-1">
                                 <div>
-                                    <h1 className="text-md md:text-lg font-semibold mt-1"> {chronique.titreDeLaChronique} </h1>
+                                    <h1 className="text-md md:text-lg font-normal mt-1"> {chronique.titreDeLaChronique} </h1>
                                 </div>
                             </div>
                             {/* Description */}
@@ -148,7 +148,7 @@ const ChroniquesList = () => {
                             {/* Title */}
                             <div className="flex-grow m-auto text-mirage-500 text-center mx-1">
                                 <div>
-                                    <h1 className="text-md md:text-lg font-semibold mt-1"> {chronique.titreDeLaChronique} </h1>
+                                    <h1 className="text-md md:text-lg font-normal mt-1"> {chronique.titreDeLaChronique} </h1>
                                 </div>
                             </div>
                             {/* Description */}
@@ -183,7 +183,7 @@ const ChroniquesList = () => {
                             {/* Title */}
                             <div className="flex-grow m-auto text-mirage-500 text-center mx-1">
                                 <div>
-                                    <h1 className="text-md md:text-lg font-semibold mt-1"> {chronique.titreDeLaChronique} </h1>
+                                    <h1 className="text-md md:text-lg font-normal mt-1"> {chronique.titreDeLaChronique} </h1>
                                 </div>
                             </div>
                             {/* Description */}
@@ -218,7 +218,7 @@ const ChroniquesList = () => {
                             {/* Title */}
                             <div className="flex-grow m-auto text-mirage-500 text-center mx-1">
                                 <div>
-                                    <h1 className="text-md md:text-lg font-semibold mt-1"> {chronique.titreDeLaChronique} </h1>
+                                    <h1 className="text-md md:text-lg font-normal mt-1"> {chronique.titreDeLaChronique} </h1>
                                 </div>
                             </div>
                             {/* Description */}

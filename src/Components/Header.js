@@ -1,9 +1,6 @@
 import React, {useState} from 'react'
 import Modal from 'react-modal'
-import { 
-    HiDotsVertical, 
-    HiOutlineSearch 
-} from 'react-icons/hi'
+import { HiDotsVertical, HiOutlineSearch } from 'react-icons/hi'
 import Navbar from './Navbar'
 
 

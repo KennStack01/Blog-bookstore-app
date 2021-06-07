@@ -18,6 +18,7 @@ module.exports = {
     description: `Vers et Chroniques, un Blog, une Librairie et une Radio`,
   },
   plugins: [
+    `gatsby-plugin-image`,
     'gatsby-plugin-postcss',
     {
       resolve: `gatsby-source-contentful`,

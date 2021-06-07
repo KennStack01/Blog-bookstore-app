@@ -8,15 +8,14 @@ function NotFound() {
         <div>
             <Layout>
                 <div className="mt-6 mb-4 text-mirage-500">
-                    <h1 className="text-2xl font-bold">Page Invalide</h1>
-                    <p className="text-sm">  </p>
+                    <h1 className="text-2xl font-bold">Page Inconnue</h1>
+                    <p className="text-md font-medium"> Oops! Vous êtes au mauvais endroit🙄 <span className="text-xl" role="img">🚀</span>  </p>
                 </div>
-                <div className="my-4 sticky top-0 bg-white pb-3">
-                    <PageList/>
-                </div>
-                <div>
-                    <p className="text-2xl font-semibold">Page Inconnue! 🙄</p>
-                </div>
+                <button className="bg-mirage-500 mx-auto mt-10 p-4 rounded-md font-semibold text-white"> 
+                    <Link to="/">
+                        Page d'Accueil <span role="img">🏡</span> 
+                    </Link>
+                </button>
             </Layout>
         </div>
     )

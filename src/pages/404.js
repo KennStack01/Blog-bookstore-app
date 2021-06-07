@@ -1,6 +1,6 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import Layout from '../Components/Layout'
-import PageList from '../Components/PagesList'
 
 
 function NotFound() {

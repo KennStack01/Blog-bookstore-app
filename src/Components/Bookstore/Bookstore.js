@@ -19,6 +19,7 @@ const Bookstore = () => {
                         auteurDuManuel
                         anneDePublication
                         prixDuManuel
+                        lienNumeroWhatsApp
                     }
                 }
             }
@@ -66,7 +67,7 @@ const Bookstore = () => {
                                     </div>
                                 </div>
                                 <button className="px-3 text-xl text-white font-normal rounded-l-lg bg-yellow-600">
-                                    <a href={`https://wa.me/243903534800?text=*Mboté+👋*,+Je+veux+acheter+le+livre+intitulé+*${book.titreDuLivre}*,+Comment+m'en+Procurer+dans+24h?`}> Acheter </a>
+                                    <a href={`https://wa.me/${book.lienNumeroWhatsApp}?text=*Mboté+👋*,+Je+veux+acheter+le+livre+intitulé+*${book.titreDuLivre}*,+Comment+m'en+Procurer+dans+24h?`}> Acheter </a>
                                 </button>
                             </div>
                         </section>

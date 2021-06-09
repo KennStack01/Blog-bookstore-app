@@ -1,10 +1,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Layout from '../Components/Layout'
+import SEO from '../Components/Seo'
+
 
 const contact = () => {
     return (
         <div>
+            <SEO title="Qui sommes-nous?" description="Découvrir l'Equipe de Vers et Chroniques" />
             <Layout>
                 <div className="mt-6 mb-4 text-mirage-500">
                     <h1 className="text-2xl font-bold">Contact Direct</h1>

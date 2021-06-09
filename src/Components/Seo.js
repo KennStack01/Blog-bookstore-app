@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
+import PictureCover from '../Images/Picture-Cover.jpg'
 
 const SEO = ({ title, description, image, article }) => {
   const { pathname } = useLocation()
@@ -39,7 +40,7 @@ const SEO = ({ title, description, image, article }) => {
         <meta property="og:description" content={seo.description} />
       )}
 
-      {seo.image && <meta property="og:image" content={seo.image} />}
+      {seo.image && <meta property="og:image" content={ `${PictureCover}`} />}
 
       <meta name="twitter:card" content="summary_large_image" />
 

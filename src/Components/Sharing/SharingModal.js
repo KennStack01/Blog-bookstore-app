@@ -6,7 +6,7 @@ const SharingModal = () => {
     return (
         <div className="">
             <div className="flex justify-center">
-                <h1 className="font-semibold">Partager avec les Amis 😍</h1>
+                <h1 className="font-semibold text-xl">Partager avec les Amis 😍</h1>
             </div>
             <div className="flex flex-col mt-5">
                 <div className="my-3 p-2 cursor-pointer flex flex-row shadow rounded-md justify-center">

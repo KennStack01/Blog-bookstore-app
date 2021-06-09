@@ -2,10 +2,12 @@ import React from "react"
 import Layout from '../Components/Layout'
 import PageList from '../Components/PagesList'
 import ChroniquesList from '../Components/Chronique/ChroniquesList'
+import SEO from '../Components/Seo'
 
 export default function Home() {
   return (
     <div>
+      <SEO title="Les Chroniques" description="Evadez-vous à travers les Meilleures Chroniques." />
       <Layout>
         <div className="mt-6 mb-4 text-mirage-500">
           <h1 className="text-2xl font-bold">Vers et Chroniques</h1>

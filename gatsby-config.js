@@ -15,9 +15,14 @@ module.exports = {
   siteMetadata: {
     title: `Vers et Chroniques App`,
     siteUrl: `https://versetchroniques.netlify.app`,
+    author: "@PenielKatombe",
     description: `Vers et Chroniques, un Blog, une Librairie et une Radio`,
+    keywords: `Lecture, Blog, Literature, Bookstore, Librarie, Vers, Chroniques, Poésies`,
+    image: "/Images/Picture-Cover.jpg", // Path to your image you placed in the 'static' folder
+    twitterUsername: "@PenielKatombe",
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     'gatsby-plugin-postcss',
     {

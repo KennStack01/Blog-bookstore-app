@@ -34,6 +34,8 @@ const ChroniquesList = () => {
         setIsOpen(false)
     }
 
+    
+
 
     const data = useStaticQuery(graphql`
     query {
@@ -51,6 +53,7 @@ const ChroniquesList = () => {
                     descriptionDeLaChronique {
                         raw
                     }
+                    date(formatString: "DD MMMM YYYY", locale: "fr")
                 }
             }
         }
@@ -79,36 +82,43 @@ const ChroniquesList = () => {
                             </div>
                             {/* Description */}
                             <p className="text-xs font-normal text-justify m-2 my-3">
-                                {console.log(JSON.parse(chronique.descriptionDeLaChronique.raw).content[0])}
+                                {/* {console.log(JSON.parse(chronique.descriptionDeLaChronique.raw).content[0])} */}
                                 {
                                     (JSON.parse(chronique.descriptionDeLaChronique.raw).content[0].content[0].value).substring(0, 160) + '...'
                                 }
                                 {/* {JSON.parse(chronique.descriptionDeLaChronique.raw).content[0].content[0].value.substring(0, 130) + '...'} */}
                             </p>
-
-                            <div className="flex flex-row justify-end mt-2 mr-5">
-                                <button className="px-5 py-1 text-white bg-mirage-500 rounded">
-                                    Lire
-                                </button>
-                                <div onClick={openModal} className="text-3xl mx-3 cursor-pointer">
-                                    <HiOutlineShare/>
+                            
+                            <div className="flex flex-row justify-between">
+                                <div className="text-xs font-normal mt-4">
+                                    <p className="text-gray-600 mx-3">
+                                        { `Le ${chronique.date}`}
+                                    </p>
                                 </div>
-                                <div className="!z-50 justify-center items-center">
-                                    <Modal
-                                        isOpen={modalIsOpen}
-                                        onRequestClose={closeModal}
-                                        shouldCloseOnOverlayClick={true}
-                                        style={customStyles}>
-                                        <SharingModal/>
-                                        <div>
-                                            <button 
-                                                onClick={() => setIsOpen(false)}
-                                                className="mt-7 mb-1 p-2"
-                                            >
-                                                Fermer
-                                            </button>
-                                        </div>
-                                    </Modal>
+                                <div className="flex flex-row justify-end mt-2 mr-5">
+                                    <button className="px-5 py-1 text-white bg-mirage-500 rounded">
+                                        Lire
+                                    </button>
+                                    <div onClick={openModal} className="text-3xl mx-3 cursor-pointer">
+                                        <HiOutlineShare/>
+                                    </div>
+                                    <div className="!z-50 justify-center items-center">
+                                        <Modal
+                                            isOpen={modalIsOpen}
+                                            onRequestClose={closeModal}
+                                            shouldCloseOnOverlayClick={true}
+                                            style={customStyles}>
+                                            <SharingModal/>
+                                            <div>
+                                                <button 
+                                                    onClick={() => setIsOpen(false)}
+                                                    className="mt-7 mb-1 p-2"
+                                                >
+                                                    Fermer
+                                                </button>
+                                            </div>
+                                        </Modal>
+                                    </div>
                                 </div>
                             </div>
                         </section>

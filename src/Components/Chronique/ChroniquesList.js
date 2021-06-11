@@ -79,11 +79,9 @@ const ChroniquesList = () => {
                             </div>
                             {/* Description */}
                             <p className="text-xs font-normal text-justify m-2 my-3">
-                                {/* {console.log(JSON.parse(chronique.descriptionDeLaChronique.raw))} */}
+                                {console.log(JSON.parse(chronique.descriptionDeLaChronique.raw).content[0])}
                                 {
-                                    (JSON.parse(chronique.descriptionDeLaChronique.raw).content[0].content[0].value +
-                                    JSON.parse(chronique.descriptionDeLaChronique.raw).content[0].content[1].value + 
-                                    JSON.parse(chronique.descriptionDeLaChronique.raw).content[0].content[2].value).substring(0, 130) + '...'
+                                    (JSON.parse(chronique.descriptionDeLaChronique.raw).content[0].content[0].value).substring(0, 160) + '...'
                                 }
                                 {/* {JSON.parse(chronique.descriptionDeLaChronique.raw).content[0].content[0].value.substring(0, 130) + '...'} */}
                             </p>

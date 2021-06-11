@@ -4,7 +4,10 @@ import {
     IoLogoFacebook,
     IoLogoTwitter,
     IoLogoLinkedin, 
+    IoLogoInstagram
 } from 'react-icons/io5'
+
+import { ImWhatsapp } from 'react-icons/im'
 
 const Navbar = () => {
     return (
@@ -39,18 +42,23 @@ const Navbar = () => {
                 <p className="mt-10 text-center">Retrouvez-nous</p>
                 <div className="flex flex-row justify-around text-3xl mt-2">
                     <div className="cursor-pointer">
-                        <a href="www.facebook.com" target="__blank">
+                        <a href="https://www.facebook.com/profile.php?id=100063121575005" target="__blank">
                             <IoLogoFacebook/>
                         </a>
                     </div>
                     <div className="cursor-pointer">
-                        <a href="www.twitter.com" target="__blank">
+                        <a href="https://twitter.com/PenielKatombe?s=09" target="__blank">
                             <IoLogoTwitter/>
                         </a>
                     </div>
                     <div className="cursor-pointer">
-                        <a href="www.linkedin.com" target="__blank">
-                            <IoLogoLinkedin/>
+                        <a href="https://www.instagram.com/invites/contact/?i=123d70ua56cjk&utm_content=oizab8" target="__blank">
+                            <IoLogoInstagram/>
+                        </a>
+                    </div>
+                    <div className="cursor-pointer">
+                        <a href="https://wa.me/message/DWICK6VGS7TOI1" target="__blank">
+                            <ImWhatsapp/>
                         </a>
                     </div>
                 </div>

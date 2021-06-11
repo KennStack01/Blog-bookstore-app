@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { HiOutlineShare } from 'react-icons/hi'
-// import renderRichText from '@contentful/rich-text-react-renderer'
+
 
 import Modal from 'react-modal'
 import SharingModal from '../Sharing/SharingModal'
@@ -47,6 +47,7 @@ const ChroniquesList = () => {
                         description
                     }
                     titreDeLaChronique
+                    id
                     descriptionDeLaChronique {
                         raw
                     }
@@ -63,7 +64,7 @@ const ChroniquesList = () => {
             <div className="">
                 <div className="grid justify-items-center lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 ">
                     { allChroniques.map( (chronique) => (
-                        <section className="flex flex-col bg-white rounded-lg shadow w-72 my-4 pb-3 mx-10" key={chronique.titreDeLaChronique}>
+                        <section className="flex flex-col bg-white rounded-lg shadow w-72 my-4 pb-3 mx-10" key={chronique.id}>
                             {/* Picture */}
                             <img
                                 className="w-full h-40 md:h-48 object-cover object-center rounded-t-lg"

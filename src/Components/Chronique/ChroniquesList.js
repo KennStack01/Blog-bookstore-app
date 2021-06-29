@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 import { HiOutlineShare } from 'react-icons/hi'
 
 
@@ -12,15 +12,15 @@ import SharingModal from '../Sharing/SharingModal'
 Modal.setAppElement('#___gatsby')
 
 const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    width                 : '20em',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
-  }
+    content : {
+        top                   : '50%',
+        left                  : '50%',
+        right                 : 'auto',
+        bottom                : 'auto',
+        width                 : '20em',
+        marginRight           : '-50%',
+        transform             : 'translate(-50%, -50%)'
+    }
 }
 
 
@@ -54,6 +54,7 @@ const ChroniquesList = () => {
                         raw
                     }
                     date(formatString: "DD MMMM YYYY", locale: "fr")
+                    slug
                 }
             }
         }
@@ -76,9 +77,11 @@ const ChroniquesList = () => {
                                 />
                             {/* Title */}
                             <div className="flex-grow m-auto text-mirage-500 text-center mx-1">
-                                <div>
-                                    <h1 className="text-md md:text-lg font-normal mt-1"> {chronique.titreDeLaChronique} </h1>
-                                </div>
+                                <Link to={`/chroniques/${chronique.slug}`}>
+                                    <div>
+                                        <h1 className="text-md md:text-lg font-normal hover:text-blue-800 mt-1"> {chronique.titreDeLaChronique} </h1>
+                                    </div>
+                                </Link>
                             </div>
                             {/* Description */}
                             <p className="text-xs font-normal text-justify m-2 my-3">
@@ -96,9 +99,11 @@ const ChroniquesList = () => {
                                     </p>
                                 </div>
                                 <div className="flex flex-row justify-end mt-2 mr-5">
-                                    <button className="px-5 py-1 text-white bg-mirage-500 rounded">
-                                        Lire
-                                    </button>
+                                    <Link to={`/chroniques/${chronique.slug}`}>
+                                        <button className="px-5 py-1 text-white bg-mirage-300 hover:bg-mirage-500 rounded">
+                                            Lire
+                                        </button>
+                                    </Link>
                                     <div onClick={openModal} className="text-3xl mx-3 cursor-pointer">
                                         <HiOutlineShare/>
                                     </div>
@@ -110,10 +115,7 @@ const ChroniquesList = () => {
                                             style={customStyles}>
                                             <SharingModal/>
                                             <div>
-                                                <button 
-                                                    onClick={() => setIsOpen(false)}
-                                                    className="mt-7 mb-1 p-2"
-                                                >
+                                                <button onClick={() => setIsOpen(false)} className="mt-7 mb-1 p-2">
                                                     Fermer
                                                 </button>
                                             </div>

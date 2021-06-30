@@ -5,7 +5,7 @@ import { IoArrowBackSharp } from 'react-icons/io5'
 const Chronique = () => {
 
     const data = useStaticQuery(graphql`
-        query {
+        query  {
             contentfulChronique {
                 image {
                     file {

@@ -1,25 +1,9 @@
 import React from 'react'
-import { graphql, useStaticQuery, Link } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { IoArrowBackSharp } from 'react-icons/io5'
 
-const Chronique = () => {
-
-    const data = useStaticQuery(graphql`
-        query  {
-            contentfulChronique {
-                image {
-                    file {
-                        url
-                    }
-                }
-                titreDeLaChronique
-                auteurDeLaChronique
-                date(formatString: "DD MMMM YYYY", locale: "fr")
-                slug
-            }
-        }
-
-    `)
+const Chronique = ({data}) => {
+    
 
     return (
         
@@ -43,7 +27,7 @@ const Chronique = () => {
                         <p className="text-xs text-gray-700 md:mr-5">Auteur: <span className="font-semibold"> {data.contentfulChronique.auteurDeLaChronique} </span> </p>
                         <p className="text-xs text-gray-700 md:ml-5">{data.contentfulChronique.date} </p>
                     </div>
-                    <div className="divide-y divide-mirage-500 mx-2 md:mx-10">
+                    <div className="divide-y divide-mirage-500 mx-2">
                         <div className="bottom-0"></div>
                         <div className="bottom-0"></div>
                     </div>
@@ -54,3 +38,20 @@ const Chronique = () => {
 }
 
 export default Chronique
+
+
+export const query = graphql`
+    query($slug: String!){
+            contentfulChronique(slug: {eq: $slug}) {
+                image {
+                    file {
+                        url
+                    }
+                }
+                titreDeLaChronique
+                auteurDeLaChronique
+                date(formatString: "DD MMMM YYYY", locale: "fr")
+                slug
+            }
+        }
+`

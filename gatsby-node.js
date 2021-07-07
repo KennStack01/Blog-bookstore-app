@@ -2,8 +2,8 @@ const path = require(`path`)
 
 exports.createPages = ({ graphql, actions: { createPage } }) => {
     return graphql(`
-        {
-            allContentfulChronique {
+        query {
+            allDatoCmsChronique {
                 edges {
                     node {
                         slug
@@ -12,7 +12,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
             }
         }
     `).then( (result) => {
-        result.data.allContentfulChronique.edges.forEach(({ node }) => {
+        result.data.allDatoCmsChronique.edges.forEach(({ node }) => {
             createPage({
                 component: path.resolve(`./src/Components/Chronique/Chronique.js`),
                 path: `/chroniques/${node.slug}`,

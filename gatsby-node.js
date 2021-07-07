@@ -23,3 +23,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
         })
     })
 }
+
+exports.createSchemaCustomization= ({ actions }) => {
+  actions.printTypeDefinitions({path: './typeDefs.txt'})
+}

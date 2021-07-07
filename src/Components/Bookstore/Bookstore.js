@@ -6,20 +6,20 @@ const Bookstore = () => {
 
     const data = useStaticQuery(graphql`
         query {
-            allContentfulBookToSell {
+            allDatoCmsLivreVendre {
                 edges {
                     node {
                         imageDuLivre {
-                            file {
-                                url
-                            }
-                            description
+                            url(imgixParams: {sharp: 1.5, transparency: "1"})
                         }
                         titreDuLivre
-                        auteurDuManuel
-                        anneDePublication
+                        auteurDuLivre
+                        dateDEdition(formatString: "YYYY", locale: "fr")
+                        resumeDuLivre {
+                        value
+                        }
                         prixDuManuel
-                        lienNumeroWhatsApp
+                        ## numeroWhatsappBusiness
                     }
                 }
             }
@@ -27,7 +27,7 @@ const Bookstore = () => {
 
     `)
 
-    const allBooks = data.allContentfulBookToSell.edges.map(({node}) => node)
+    const allBooks = data.allDatoCmsLivreVendre.edges.map(({node}) => node)
 
     return (
         <div className="grid justify-items-center lg:grid lg:grid-cols-3 md:grid md:grid-cols-2">
@@ -36,8 +36,8 @@ const Bookstore = () => {
                             {/* Picture */}
                             <img
                                 className="w-full h-40 md:h-48 object-cover object-center rounded-t-lg"
-                                src={book.imageDuLivre.file.url}
-                                alt={book.imageDuLivre.description}
+                                src={book.imageDuLivre.url}
+                                alt=""
                                 />
                             {/* Title */}
                             <div className="flex-grow m-auto text-mirage-500 text-center mx-1">
@@ -49,13 +49,13 @@ const Bookstore = () => {
                             <div className="flex flex-row m-2 mt-3">
                                 <p> Auteur: </p>
                                 <p className="text-md font-normal text-justify mx-3">
-                                    {` ${book.auteurDuManuel}` }
+                                    {` ${book.auteurDuLivre}` }
                                 </p>
                             </div>
                             <div className="flex flex-row mx-2 mb-2">
                                 <p> Année: </p>
                                 <p className="text-md font-normal text-justify mx-3">
-                                    {`${new Date(book.anneDePublication).getFullYear()}` }
+                                    {`${book.dateDEdition}` }
                                 </p>
                             </div>
 
@@ -67,7 +67,7 @@ const Bookstore = () => {
                                     </div>
                                 </div>
                                 <button className="px-3 text-xl text-white font-normal rounded-l-lg bg-yellow-600">
-                                    <a href={`https://wa.me/${book.lienNumeroWhatsApp}?text=*Mboté+👋*,+Je+veux+acheter+le+livre+intitulé+*${book.titreDuLivre}*,+Comment+m'en+Procurer+dans+24h?`} target="__blank"> Acheter </a>
+                                    <a href={`https://wa.me/${243903534800}?text=*Mboté+👋*,+Je+veux+acheter+le+livre+intitulé+*${book.titreDuLivre}*,+Comment+m'en+Procurer+dans+24h?`} target="__blank"> Acheter </a>
                                 </button>
                             </div>
                         </section>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { IoArrowBackSharp } from 'react-icons/io5'
+import Bodytext from './BodyText'
 
 const Chronique = ({data}) => {
     
@@ -16,22 +17,24 @@ const Chronique = ({data}) => {
                     </Link>
                 </div>
                 <img 
-                    src={`${data.contentfulChronique.image.file.url}`} 
-                    alt={`${data.contentfulChronique.titeDeLaChronique}`} 
+                    src={`${data.datoCmsChronique.imageDeLaChronique.url}`} 
+                    alt="" 
                     // className="w-full h-48 md:h-60 object-cover object-center mt-6"
                     className="object-cover relative object-center h-60 w-full"
                 />
                 <div className="flex flex-col">
-                    <h1 className="text-lg text-center font-semibold mx-3 my-4 md:mx-auto"> {data.contentfulChronique.titreDeLaChronique} </h1>
+                    <h1 className="text-lg text-center font-semibold mx-3 my-4 md:mx-auto"> {data.datoCmsChronique.leTitreDeLaChronique} </h1>
                     <div className="flex flex-row justify-between mx-3 mt-4 ">
-                        <p className="text-xs text-gray-700 md:mr-5">Auteur: <span className="font-semibold"> {data.contentfulChronique.auteurDeLaChronique} </span> </p>
-                        <p className="text-xs text-gray-700 md:ml-5">{data.contentfulChronique.date} </p>
+                        <p className="text-xs text-gray-700 md:mr-5">Auteur: <span className="font-semibold"> {data.datoCmsChronique.auteurDeLaChronique} </span> </p>
+                        <p className="text-xs text-gray-700 md:ml-5">{data.datoCmsChronique.dateDePublicationDeLaChronique} </p>
                     </div>
                     <div className="divide-y divide-mirage-500 mx-2">
                         <div className="bottom-0"></div>
                         <div className="bottom-0"></div>
                     </div>
                 </div>
+
+                <Bodytext/>
             </div>
         </div>
     )
@@ -41,17 +44,16 @@ export default Chronique
 
 
 export const query = graphql`
-    query($slug: String!){
-            contentfulChronique(slug: {eq: $slug}) {
-                image {
-                    file {
-                        url
-                    }
-                }
-                titreDeLaChronique
-                auteurDeLaChronique
-                date(formatString: "DD MMMM YYYY", locale: "fr")
-                slug
+    query ($slug: String!) {
+        datoCmsChronique(slug: {eq: $slug}) {
+            imageDeLaChronique {
+                url
             }
+            leTitreDeLaChronique
+            auteurDeLaChronique
+            dateDePublicationDeLaChronique(formatString: "DD MMMM YYYY", locale: "fr")
+            slug
         }
+    }
+
 `

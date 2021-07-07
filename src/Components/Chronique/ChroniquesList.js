@@ -8,7 +8,6 @@ import SharingModal from '../Sharing/SharingModal'
 
 
 // Sharing functionalities (Modal)
-
 Modal.setAppElement('#___gatsby')
 
 const customStyles = {
@@ -36,32 +35,26 @@ const ChroniquesList = () => {
 
     
 
-
     const data = useStaticQuery(graphql`
     query {
-        allContentfulChronique(sort: {fields: image___createdAt, order: DESC}) {
+        allDatoCmsChronique(sort: {fields: dateDePublicationDeLaChronique, order: DESC}) {
             edges {
                 node {
-                    image {
-                        file {
-                            url
-                        }
-                        description
+                    imageDeLaChronique {
+                        url
                     }
-                    titreDeLaChronique
+                    leTitreDeLaChronique
                     id
-                    descriptionDeLaChronique {
-                        raw
-                    }
-                    date(formatString: "DD MMMM YYYY", locale: "fr")
+                    descriptionDeLaChronique
                     slug
+                    dateDePublicationDeLaChronique(formatString: "DD MMMM YYYY", locale: "fr")
                 }
             }
         }
     }
     `)
 
-    const allChroniques = data.allContentfulChronique.edges.map(({node}) => node)
+    const allChroniques = data.allDatoCmsChronique.edges.map(({node}) => node)
 
     return (
         <div>
@@ -72,8 +65,8 @@ const ChroniquesList = () => {
                             {/* Picture */}
                             <img
                                 className="w-full h-40 md:h-48 object-cover object-center rounded-t-lg"
-                                src={chronique.image.file.url}
-                                alt={chronique.image.description}
+                                src={chronique.imageDeLaChronique.url}
+                                alt=""
                                 />
                             {/* Title */}
                             <div className="flex-grow m-auto text-mirage-500 text-center mx-1">
@@ -85,17 +78,13 @@ const ChroniquesList = () => {
                             </div>
                             {/* Description */}
                             <p className="text-xs font-normal text-justify m-2 my-3">
-                                {/* {console.log(JSON.parse(chronique.descriptionDeLaChronique.raw).content[0])} */}
-                                {
-                                    (JSON.parse(chronique.descriptionDeLaChronique.raw).content[0].content[0].value).substring(0, 160) + '...'
-                                }
-                                {/* {JSON.parse(chronique.descriptionDeLaChronique.raw).content[0].content[0].value.substring(0, 130) + '...'} */}
+                                {chronique.descriptionDeLaChronique}
                             </p>
                             
                             <div className="flex flex-row justify-between">
                                 <div className="text-xs font-normal mt-4">
                                     <p className="text-gray-600 mx-3">
-                                        { `Le ${chronique.date}`}
+                                        { `Le ${chronique.dateDePublicationDeLaChronique}`}
                                     </p>
                                 </div>
                                 <div className="flex flex-row justify-end mt-2 mr-5">

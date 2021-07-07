@@ -1,0 +1,274 @@
+### Type definitions saved at 2021-07-02T06:30:26.724Z ###
+
+type File implements Node @dontInfer {
+  sourceInstanceName: String!
+  absolutePath: String!
+  relativePath: String!
+  extension: String!
+  size: Int!
+  prettySize: String!
+  modifiedTime: Date! @dateformat
+  accessTime: Date! @dateformat
+  changeTime: Date! @dateformat
+  birthTime: Date! @dateformat
+  root: String!
+  dir: String!
+  base: String!
+  ext: String!
+  name: String!
+  relativeDirectory: String!
+  dev: Int!
+  mode: Int!
+  nlink: Int!
+  uid: Int!
+  gid: Int!
+  rdev: Int!
+  ino: Float!
+  atimeMs: Float!
+  mtimeMs: Float!
+  ctimeMs: Float!
+  atime: Date! @dateformat
+  mtime: Date! @dateformat
+  ctime: Date! @dateformat
+  birthtime: Date @deprecated(reason: "Use `birthTime` instead")
+  birthtimeMs: Float @deprecated(reason: "Use `birthTime` instead")
+}
+
+type Directory implements Node @dontInfer {
+  sourceInstanceName: String!
+  absolutePath: String!
+  relativePath: String!
+  extension: String!
+  size: Int!
+  prettySize: String!
+  modifiedTime: Date! @dateformat
+  accessTime: Date! @dateformat
+  changeTime: Date! @dateformat
+  birthTime: Date! @dateformat
+  root: String!
+  dir: String!
+  base: String!
+  ext: String!
+  name: String!
+  relativeDirectory: String!
+  dev: Int!
+  mode: Int!
+  nlink: Int!
+  uid: Int!
+  gid: Int!
+  rdev: Int!
+  ino: Float!
+  atimeMs: Float!
+  mtimeMs: Float!
+  ctimeMs: Float!
+  atime: Date! @dateformat
+  mtime: Date! @dateformat
+  ctime: Date! @dateformat
+  birthtime: Date @deprecated(reason: "Use `birthTime` instead")
+  birthtimeMs: Float @deprecated(reason: "Use `birthTime` instead")
+}
+
+type Site implements Node @dontInfer {
+  buildTime: Date @dateformat
+  siteMetadata: SiteSiteMetadata
+  port: Int
+  host: String
+  polyfill: Boolean
+  pathPrefix: String
+}
+
+type SiteSiteMetadata {
+  title: String
+  description: String
+  siteUrl: String
+  author: String
+  keywords: String
+  image: String
+  twitterUsername: String
+}
+
+type SiteFunction implements Node @dontInfer {
+  functionRoute: String!
+  pluginName: String!
+  originalAbsoluteFilePath: String!
+  originalRelativeFilePath: String!
+  relativeCompiledFilePath: String!
+  absoluteCompiledFilePath: String!
+  matchPath: String
+}
+
+type SitePage implements Node @dontInfer {
+  path: String!
+  component: String!
+  internalComponentName: String!
+  componentChunkName: String!
+  matchPath: String
+}
+
+interface ContentfulEntry implements Node {
+  contentful_id: String!
+  id: ID!
+  node_locale: String!
+}
+
+interface ContentfulReference {
+  contentful_id: String!
+  id: ID!
+}
+
+type ContentfulAsset implements ContentfulReference & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  file: ContentfulAssetFile
+  title: String
+  description: String
+  node_locale: String
+  sys: ContentfulAssetSys
+}
+
+type ContentfulAssetFile @derivedTypes {
+  url: String
+  details: ContentfulAssetFileDetails
+  fileName: String
+  contentType: String
+}
+
+type ContentfulAssetFileDetails @derivedTypes {
+  size: Int
+  image: ContentfulAssetFileDetailsImage
+}
+
+type ContentfulAssetFileDetailsImage {
+  width: Int
+  height: Int
+}
+
+type ContentfulAssetSys {
+  type: String
+  revision: Int
+}
+
+type ContentfulChronique implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  titreDeLaChronique: String
+  auteurDeLaChronique: String
+  date: Date @dateformat
+  descriptionDeLaChronique: ContentfulChroniqueDescriptionDeLaChronique
+  contenuDeLaChronique: ContentfulChroniqueContenuDeLaChronique
+  slug: String
+  image: ContentfulAsset @link(by: "id", from: "image___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulChroniqueSys
+}
+
+type ContentfulChroniqueDescriptionDeLaChronique {
+  raw: String
+}
+
+type ContentfulChroniqueContenuDeLaChronique {
+  raw: String
+  references: [ContentfulAsset] @link(by: "id", from: "references___NODE")
+}
+
+type ContentfulChroniqueSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulChroniqueSysContentType
+}
+
+type ContentfulChroniqueSysContentType @derivedTypes {
+  sys: ContentfulChroniqueSysContentTypeSys
+}
+
+type ContentfulChroniqueSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulRecitPoesie implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  titreDuRcitOuPosie: String
+  auteurDeLaPoesie: String
+  date: Date @dateformat
+  descriptionDuRcit: ContentfulRecitPoesieDescriptionDuRcit
+  contenuDuRecitOuPoesie: ContentfulRecitPoesieContenuDuRecitOuPoesie
+  slug: String
+  imageDuCover: ContentfulAsset @link(by: "id", from: "imageDuCover___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulRecitPoesieSys
+}
+
+type ContentfulRecitPoesieDescriptionDuRcit {
+  raw: String
+}
+
+type ContentfulRecitPoesieContenuDuRecitOuPoesie {
+  raw: String
+}
+
+type ContentfulRecitPoesieSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulRecitPoesieSysContentType
+}
+
+type ContentfulRecitPoesieSysContentType @derivedTypes {
+  sys: ContentfulRecitPoesieSysContentTypeSys
+}
+
+type ContentfulRecitPoesieSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulBookToSell implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  titreDuLivre: String
+  auteurDuManuel: String
+  anneDePublication: Date @dateformat
+  prixDuManuel: Int
+  lienNumeroWhatsApp: Float
+  imageDuLivre: ContentfulAsset @link(by: "id", from: "imageDuLivre___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulBookToSellSys
+}
+
+type ContentfulBookToSellSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulBookToSellSysContentType
+}
+
+type ContentfulBookToSellSysContentType @derivedTypes {
+  sys: ContentfulBookToSellSysContentTypeSys
+}
+
+type ContentfulBookToSellSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulContentType implements Node @derivedTypes @dontInfer {
+  name: String
+  displayField: String
+  description: String
+  sys: ContentfulContentTypeSys
+}
+
+type ContentfulContentTypeSys {
+  type: String
+}

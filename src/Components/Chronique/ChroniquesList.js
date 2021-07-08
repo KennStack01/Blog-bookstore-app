@@ -59,20 +59,22 @@ const ChroniquesList = () => {
     return (
         <div>
             <div className="">
-                <div className="grid justify-items-center lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 ">
+                <div className="grid justify-items-center lg:grid lg:grid-cols-3 md:grid md:grid-cols-2">
                     { allChroniques.map( (chronique) => (
-                        <section className="flex flex-col bg-white rounded-lg shadow w-72 my-4 pb-3 mx-10" key={chronique.id}>
+                        <section className="flex flex-col bg-white rounded-lg shadow w-72 my-4 pb-3 mx-10 transform transition duration-500 hover:scale-105" key={chronique.id}>
                             {/* Picture */}
-                            <img
-                                className="w-full h-40 md:h-48 object-cover object-center rounded-t-lg"
-                                src={chronique.imageDeLaChronique.url}
-                                alt=""
-                                />
+                            <Link to={`/chroniques/${chronique.slug}`}>
+                                <img
+                                    className="w-full h-40 md:h-48 object-cover object-center rounded-t-lg"
+                                    src={chronique.imageDeLaChronique.url}
+                                    alt=""
+                                    />
+                            </Link>
                             {/* Title */}
                             <div className="flex-grow m-auto text-mirage-500 text-center mx-1">
                                 <Link to={`/chroniques/${chronique.slug}`}>
                                     <div>
-                                        <h1 className="text-md md:text-lg font-normal hover:text-blue-800 mt-1"> {chronique.titreDeLaChronique} </h1>
+                                        <h1 className="text-sm md:text-md font-semibold hover:text-yellow-600 hover:underline mt-1"> {chronique.leTitreDeLaChronique} </h1>
                                     </div>
                                 </Link>
                             </div>
@@ -96,7 +98,7 @@ const ChroniquesList = () => {
                                     <div onClick={openModal} className="text-3xl mx-3 cursor-pointer">
                                         <HiOutlineShare/>
                                     </div>
-                                    <div className="!z-50 justify-center items-center">
+                                    <div className="!z-50 justify-center items-center animated fadeInUp">
                                         <Modal
                                             isOpen={modalIsOpen}
                                             onRequestClose={closeModal}

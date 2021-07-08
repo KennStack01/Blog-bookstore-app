@@ -73,7 +73,7 @@ const RecitPoesie = () => {
                                 </div>
                                 {/* Description */}
                                 <p className="text-xs font-normal text-justify m-2 my-1">
-                                    {recit.descriptionDuRecit}
+                                    {`${recit.descriptionDuRecit.substring(0, 155)}...`}
                                 </p>
 
                                 <div className="flex flex-row justify-end my-2">

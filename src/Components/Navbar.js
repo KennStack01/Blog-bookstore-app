@@ -11,7 +11,7 @@ import { ImWhatsapp } from 'react-icons/im'
 
 const Navbar = () => {
     return (
-        <div>
+        <div className="">
             <section className="flex flex-col text-xl bg-mirage-500 backdrop-filter backdrop-blur-lg text-white font-normal justify-center p-4">
                 <h1 className="mb-10 font-semibold cursor-pointer">
                     <Link to="/">

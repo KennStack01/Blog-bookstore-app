@@ -3,15 +3,13 @@ import { graphql, Link } from 'gatsby'
 import { IoArrowBackSharp } from 'react-icons/io5'
 import Bodytext from './BodyText'
 
-const Chronique = ({data}) => {
-    
+const TemplateForChronique = ({data}) => {
 
     return (
-        
         <div>
             <div>
                 <div>
-                    {/* Add Previous page link path */}
+                    {/* Add Previous page link path: <Link to=".."></Link> */}
                     <Link to='/' className="absolute z-50 bg-white text-3xl p-2 rounded-full ml-4 mt-4 shadow-md">
                         <IoArrowBackSharp/>
                     </Link>
@@ -40,7 +38,7 @@ const Chronique = ({data}) => {
     )
 }
 
-export default Chronique
+export default TemplateForChronique
 
 
 export const query = graphql`

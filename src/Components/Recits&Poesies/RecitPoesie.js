@@ -57,7 +57,7 @@ const RecitPoesie = () => {
         <div>
             <div className="flex flex-col lg:grid lg:grid-cols-2">
                 { allRecits.map( (recit) => (
-                        <section className={`flex flex-row bg-white h-32 w-auto md:w-90 rounded-l-lg border-r-4 ${borderColor[Math.floor(Math.random() * borderColor.length)]} shadow my-4 mx-2`} key={recit.titreDuRecit}>
+                        <section className={`flex flex-row bg-white h-32 w-auto md:w-90 rounded-l-lg border-r-4 ${borderColor[Math.floor(Math.random() * borderColor.length)]} shadow my-4 mx-2 transform transition duration-500 hover:scale-105`} key={recit.titreDuRecit}>
                             {/* Picture */}
                             <img
                                 className="w-32 h-32 md:w-48 md:h-32 object-cover object-center rounded-l-lg"

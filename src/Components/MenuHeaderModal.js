@@ -30,10 +30,10 @@ export default function MenuHeaderModal() {
             <div>
                 <Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-yellow-500">
                     <div className="flex flex-row font-semibold cursor-pointer"> 
+                        <p className="text-xl font-semibold mt-0">menu</p>
                         <div className="mt-1 text-xl">
                             <HiDotsVertical/> 
                         </div>
-                        <p className="text-xl font-semibold mt-0">menu</p>
                     </div>
                 </Menu.Button>
             </div>
@@ -50,7 +50,7 @@ export default function MenuHeaderModal() {
             >
                 <Menu.Items
                 static
-                className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
+                className="origin-top-right absolute right-0 mt-2 w-60 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
                 >
                 <div className="py-1">
                     <Menu.Item>
@@ -62,11 +62,11 @@ export default function MenuHeaderModal() {
                             'block mx-auto px-4 py-2 text-sm font-semibold cursor-pointer'
                         )}
                         >
-                            <p className="flex flex-col mx-6">
+                            <p className="flex flex-col mx-8">
                                 <span>
                                     Vers et Chroniques <br /> 
                                 </span>
-                                <span className="text-xs text-gray-500 font-light mx-3">(Aller à l'Accueil)</span>
+                                <span className="text-xs text-gray-500 font-light mx-5">(Aller à l'Accueil)</span>
                             </p>
                         </Link>
                     )}

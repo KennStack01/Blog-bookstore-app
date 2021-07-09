@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
 
+
 const styles = {
     layoutContent: 'text-center flex flex-col h-screen',
     children: 'flex-grow',

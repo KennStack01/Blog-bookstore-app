@@ -35,16 +35,7 @@ const Header = () => {
     //     setIsOpen(false)
     // }
 
-    const specialFx = () => {
-        if(modalIsOpen){
-            window.addEventListener("click", () => {
-                // window.alert("Hello")
-
-                setIsOpen(false)
-            })
-        }
-    }
-
+    
     const handleOpenState = () => {
         if(!modalIsOpen) {
             // closeModal()
@@ -53,53 +44,53 @@ const Header = () => {
         else {
             // openModal()
             setIsOpen(false)
-            // specialFx()
         }
     }
 
+    // Function thats opens Modal
     
 
     return (
         <div>
-            {/* For Mobile View */}
             <div className="flex flex-row justify-between mx-4 my-2 text-xl text-mirage-500">
-                {/* <div className="flex flex-row font-semibold cursor-pointer" onClick={openModal}>  */}
-                <div className="flex flex-row font-semibold cursor-pointer" onClick={handleOpenState}> 
-                <div className="mt-1">
-                    <HiDotsVertical/> 
-                </div>
-                <p className="text-xl font-semibold mt-0">menu</p>
-                </div>
-                {/* <div className="font-semibold text-2xl cursor-pointer mt-1"> 
-                    <HiOutlineSearch/> 
+                {/* <div className="flex flex-row font-semibold cursor-pointer" onClick={openModal}> 
+                    <div className="flex flex-row font-semibold cursor-pointer" onClick={handleOpenState}> 
+                        <div className="mt-1">
+                            <HiDotsVertical/> 
+                        </div>
+                        <p className="text-xl font-semibold mt-0">menu</p>
+                    </div>
+                    <div className="font-semibold text-2xl cursor-pointer mt-1"> 
+                        <HiOutlineSearch/> 
+                    </div>
                 </div> */}
+
+            <div>
+
             </div>
             
-            
-            {/* { modalIsOpen && <MenuHeaderModal/>} */}
-
-            {
-                modalIsOpen ? (<MenuHeaderModal/>) : ''
-            }
-
+            <div className="z-50">
+                <MenuHeaderModal/>
+            </div>
 
             {/* <div className="justify-center items-center">
-                <Modal
-                    isOpen={modalIsOpen}
-                    onRequestClose={closeModal}
-                    shouldCloseOnOverlayClick={true}
-                    style={customStyles}>
-                    <Navbar/>
-                    <div className="flex flex-row justify-end mr-5">
-                        <button 
-                            onClick={() => setIsOpen(false)}
-                            className="mt-7 mb-1"
-                        >
-                            Fermer
-                        </button>
-                    </div>
-                </Modal>
-            </div> */}
+                    <Modal
+                        isOpen={modalIsOpen}
+                        onRequestClose={closeModal}
+                        shouldCloseOnOverlayClick={true}
+                        style={customStyles}>
+                        <Navbar/>
+                        <div className="flex flex-row justify-end mr-5">
+                            <button 
+                                onClick={() => setIsOpen(false)}
+                                className="mt-7 mb-1"
+                            >
+                                Fermer
+                            </button>
+                        </div>
+                    </Modal>
+                </div> */}
+            </div>
         </div>
     )
 }

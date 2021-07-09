@@ -1,95 +1,151 @@
 /* This example requires Tailwind CSS v2.0+ */
-import React, { Fragment, useRef, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-// import { ExclamationIcon } from '@heroicons/react/outline'
-import HeaderButton from './Header'
+import React, { Fragment } from 'react'
+import { Link } from 'gatsby'
+import { Menu, Transition } from '@headlessui/react'
+// import { ChevronDownIcon } from '@heroicons/react/solid'
 import { 
     HiDotsVertical, 
     HiOutlineSearch 
 } from 'react-icons/hi'
 
+import { 
+    IoLogoFacebook,
+    IoLogoTwitter,
+    IoLogoLinkedin, 
+    IoLogoInstagram
+} from 'react-icons/io5'
 
-    export default function MenuHeaderModal() {
-    const [open, setOpen] = useState(true)
+import { ImWhatsapp } from 'react-icons/im'
 
-    const cancelButtonRef = useRef(null)
 
+
+
+function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+}
+
+export default function MenuHeaderModal() {
     return (
-        <Transition.Root show={open} as={Fragment}>
-            <Dialog
-                as="div"
-                static
-                className="fixed z-10 inset-0 overflow-y-auto"
-                initialFocus={cancelButtonRef}
-                open={open}
-                onClose={setOpen}
-            >
-                <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-                    <Transition.Child
-                        as={Fragment}
-                        enter="ease-out duration-300"
-                        enterFrom="opacity-0"
-                        enterTo="opacity-100"
-                        leave="ease-in duration-200"
-                        leaveFrom="opacity-100"
-                        leaveTo="opacity-0"
-                    >
-                        <Dialog.Overlay className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-                    </Transition.Child>
+        <Menu as="div" className="relative inline-block text-left">
+        {({ open }) => (
+            <>
+            <div>
+                <Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-yellow-500">
+                {/* <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" /> */}
+                    <div className="flex flex-row font-semibold cursor-pointer"> 
+                        <div className="mt-1 text-xl">
+                            <HiDotsVertical/> 
+                        </div>
+                        <p className="text-xl font-semibold mt-0">menu</p>
+                    </div>
+                </Menu.Button>
+            </div>
 
-                    {/* This element is to trick the browser into centering the modal contents. */}
-                    <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
-                        &#8203;
-                    </span>
-                    <Transition.Child
-                        as={Fragment}
-                        enter="ease-out duration-300"
-                        enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                        enterTo="opacity-100 translate-y-0 sm:scale-100"
-                        leave="ease-in duration-200"
-                        leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-                        leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                    >
-                        <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-                            <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                                <div className="sm:flex sm:items-start">
-                                    <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-                                        {/* <ExclamationIcon className="h-6 w-6 text-red-600" aria-hidden="true" /> */}
-                                    </div>
-                                    <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                                        <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
-                                        Deactivate account
-                                        </Dialog.Title>
-                                        <div className="mt-2">
-                                            <p className="text-sm text-gray-500">
-                                                Are you sure you want to deactivate your account? All of your data will be permanently removed.
-                                                This action cannot be undone.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+            <Transition
+                show={open}
+                as={Fragment}
+                enter="transition ease-out duration-100"
+                enterFrom="transform opacity-0 scale-95"
+                enterTo="transform opacity-100 scale-100"
+                leave="transition ease-in duration-75"
+                leaveFrom="transform opacity-100 scale-100"
+                leaveTo="transform opacity-0 scale-95"
+            >
+                <Menu.Items
+                static
+                className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
+                >
+                <div className="py-1">
+                    <Menu.Item>
+                    {({ active }) => (
+                        <Link
+                        to="/"
+                        className={classNames(
+                            active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                            'block mx-auto px-4 py-2 text-sm font-semibold cursor-pointer'
+                        )}
+                        >
+                        Vers et Chroniques (Accueil)
+                        </Link>
+                    )}
+                    </Menu.Item>
+                </div>
+                <div className="py-1">
+                    <Menu.Item>
+                    {({ active }) => (
+                        <Link
+                        to="/bibliotheque"
+                        className={classNames(
+                            active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                            'block px-4 py-2 text-sm'
+                        )}
+                        >
+                        <span role="img">📚</span> Bibliothèque
+                        </Link>
+                    )}
+                    </Menu.Item>
+                    <Menu.Item>
+                    {({ active }) => (
+                        <Link
+                        to="/quiSommesNous"
+                        className={classNames(
+                            active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                            'block px-4 py-2 text-sm'
+                        )}
+                        >
+                            <span role="img">💡</span> Qui sommes-nous?
+                        </Link>
+                    )}
+                    </Menu.Item>
+                </div>
+                <div className="py-1">
+                    <Menu.Item>
+                    {({ active }) => (
+                        <Link
+                        to="/contact"
+                        className={classNames(
+                            active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                            'block px-4 py-2 text-sm'
+                        )}
+                        >
+                            <span role="img">📩</span>  Contactez-nous
+                        </Link>
+                    )}
+                    </Menu.Item>
+                </div>
+                <div className="py-1">
+                    <Menu.Item>
+                    <div>
+                        <p className="mt-5 text-center text-sm">Retrouvez-nous</p>
+                        <div className="flex flex-row justify-around text-2xl my-2">
+                            <div className="cursor-pointer">
+                                <a href="https://www.facebook.com/profile.php?id=100063121575005" target="__blank">
+                                    <IoLogoFacebook/>
+                                </a>
                             </div>
-                            <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                                <button
-                                    type="button"
-                                    className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
-                                    onClick={() => setOpen(false)}
-                                >
-                                    Deactivate
-                                </button>
-                                <button
-                                    type="button"
-                                    className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
-                                    onClick={() => setOpen(false)}
-                                    ref={cancelButtonRef}
-                                >
-                                    Cancel
-                                </button>
+                            <div className="cursor-pointer">
+                                <a href="https://twitter.com/PenielKatombe?s=09" target="__blank">
+                                    <IoLogoTwitter/>
+                                </a>
+                            </div>
+                            <div className="cursor-pointer">
+                                <a href="https://www.instagram.com/invites/contact/?i=123d70ua56cjk&utm_content=oizab8" target="__blank">
+                                    <IoLogoInstagram/>
+                                </a>
+                            </div>
+                            <div className="cursor-pointer">
+                                <a href="https://wa.me/message/DWICK6VGS7TOI1" target="__blank">
+                                    <ImWhatsapp/>
+                                </a>
                             </div>
                         </div>
-                    </Transition.Child>
+                    </div>
+                    </Menu.Item>
                 </div>
-            </Dialog>
-        </Transition.Root>  
-        )
-    }
+                </Menu.Items>
+            </Transition>
+            </>
+        )}
+        </Menu>
+    )
+}

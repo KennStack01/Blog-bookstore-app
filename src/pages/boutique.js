@@ -2,12 +2,12 @@ import React from 'react'
 import Layout from '../Components/Layout'
 import PageList from '../Components/PagesList'
 import Bookstore from '../Components/Bookstore/Bookstore'
-import SEO from '../Components/Seo'
+import Seo from '../Components/Seo'
 
 const boutique = () => {
     return (
         <div>
-            <SEO title="Librairies" description="Acheter des Livres en un seul Clic" />
+            <Seo title="Librairies" description="Acheter des Livres en un seul Clic" />
             <Layout>
                 <div className="mt-6 mb-4 text-mirage-500">
                     <h1 className="text-2xl font-bold">Boutiques de Livres</h1>

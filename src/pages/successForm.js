@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Layout from '../Components/Layout'
-import SEO from '../Components/Seo'
+import Seo from '../Components/Seo'
 
 
 function SuccessForm() {
     return (
         <div>
-            <SEO title="Merci de nous écrire" description="Merci de nous écrire" />
+            <Seo title="Merci de nous écrire" description="Merci de nous écrire" />
             <Layout>
                 <div className="mt-6 mb-4 text-mirage-500">
                     <h1 className="text-2xl font-bold">Bien réçu😊</h1>

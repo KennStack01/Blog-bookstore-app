@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Layout from '../Components/Layout'
 import ContactForm from '../Components/Contact/ContactForm'
-import SEO from '../Components/Seo'
+import Seo from '../Components/Seo'
 
 import { 
     IoLogoFacebook,
@@ -15,7 +15,7 @@ import { ImWhatsapp } from 'react-icons/im'
 const contact = () => {
     return (
         <div>
-            <SEO title="Qui sommes-nous?" description="Découvrir l'Equipe de Vers et Chroniques" />
+            <Seo title="Qui sommes-nous?" description="Découvrir l'Equipe de Vers et Chroniques" />
             <Layout>
                 <div className="mt-6 mb-4 text-mirage-500">
                     <div className="mb-5">

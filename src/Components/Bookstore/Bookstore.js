@@ -32,7 +32,7 @@ const Bookstore = () => {
     return (
         <div className="grid justify-items-center lg:grid lg:grid-cols-3 md:grid md:grid-cols-2">
             { allBooks.map( (book) => (
-                        <section className="flex flex-col bg-white rounded-lg shadow w-60 my-4 pb-3 mx-5" key={book.titreDuLivre}>
+                        <section className="flex flex-col bg-white rounded-lg shadow w-60 my-4 pb-3 mx-5 transform transition duration-500 hover:scale-105" key={book.titreDuLivre}>
                             {/* Picture */}
                             <img
                                 className="w-full h-40 md:h-48 object-cover object-center rounded-t-lg"

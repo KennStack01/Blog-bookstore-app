@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Layout from '../Components/Layout'
-import SEO from '../Components/Seo'
+import Seo from '../Components/Seo'
 
 const bibliotheque = () => {
     return (
         <div>
-            <SEO title="Bibliothèque" description="Découvrir les Oeuvres de multiples Auteurs" />
+            <Seo title="Bibliothèque" description="Découvrir les Oeuvres de multiples Auteurs" />
             <Layout>
                 <div className="mt-6 mb-4 text-mirage-500">
                     <h1 className="text-2xl font-bold">Bibliothèque</h1>

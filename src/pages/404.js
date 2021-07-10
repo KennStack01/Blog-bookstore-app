@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Layout from '../Components/Layout'
-import SEO from '../Components/Seo'
+import Seo from '../Components/Seo'
 
 
 function NotFound() {
     return (
         <div>
-            <SEO title="Page Inconnue" description="Page non trouvée" />
+            <Seo title="Page Inconnue" description="Page non trouvée" />
             <Layout>
                 <div className="mt-6 mb-4 text-mirage-500">
                     <h1 className="text-2xl font-bold">Page Inconnue</h1>

@@ -29,6 +29,7 @@ export default function HeaderForChronique({ data }) {
                     <div className="bottom-0"></div>
                 </div>
             </div>
+            <div dangerouslySetInnerHTML={{ __html: data.datoCmsChronique.contenuDeLaChroniqueNode.childMarkdownRemark.html }}></div>
         </section>
     )
 }

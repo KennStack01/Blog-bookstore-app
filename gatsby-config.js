@@ -24,6 +24,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+    `gatsby-transformer-remark`,
     'gatsby-plugin-postcss',
     {
     resolve: `gatsby-source-datocms`,

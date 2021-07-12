@@ -1,5 +1,5 @@
 import React from 'react'
-
+import HeaderForChronique from './HeaderForChronique'
 // import Bodytext from './BodyText'
 
 const TemplateForChronique = () => {
@@ -7,8 +7,8 @@ const TemplateForChronique = () => {
     return (
         <div>
             <div>
-                <h1> Hello, happy Coding😁</h1>
                 {/* Header for Chronique */}
+                <HeaderForChronique />
                 {/* <Bodytext/> */}
             </div>
         </div>

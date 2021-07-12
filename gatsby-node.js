@@ -15,7 +15,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
     `).then( (result) => {
         result.data.allDatoCmsChronique.edges.forEach(({ node }) => {
             createPage({
-                component: path.resolve(`./src/Components/Chronique/TemplateForChronique.js`),
+                component: path.resolve(`./src/templates/Chronique/TemplateForChronique.js`),
                 path: `/chroniques/${node.slug}`,
                 context: {
                     slug: node.slug,

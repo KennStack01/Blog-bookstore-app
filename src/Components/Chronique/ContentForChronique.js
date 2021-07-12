@@ -18,7 +18,7 @@ export default function HeaderForChronique({ data }) {
                 // className="w-full h-48 md:h-60 object-cover object-center mt-6"
                 className="object-cover relative object-center h-60 w-full"
             />
-            <div className="flex flex-col">
+            <div className="flex flex-col mb-12">
                 <h1 className="text-lg text-center font-semibold mx-3 my-4 md:mx-auto"> {data.datoCmsChronique.leTitreDeLaChronique} </h1>
                 <div className="flex flex-row justify-between mx-3 mt-4 ">
                     <p className="text-xs text-gray-700 md:mr-5">Auteur: <span className="font-semibold"> {data.datoCmsChronique.auteurDeLaChronique} </span> </p>

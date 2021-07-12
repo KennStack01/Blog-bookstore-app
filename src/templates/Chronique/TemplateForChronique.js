@@ -28,6 +28,7 @@ export const query = graphql`
                 contenuDeLaChroniqueNode {
                     childMarkdownRemark {
                         html
+                        excerpt(format: HTML)
                     }
                 }
             }

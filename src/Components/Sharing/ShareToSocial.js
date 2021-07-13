@@ -5,7 +5,6 @@ import { HiOutlineShare } from 'react-icons/hi'
 import { TiSocialLinkedin, TiSocialTwitter, TiSocialFacebook } from 'react-icons/ti'
 import { ImWhatsapp } from 'react-icons/im'
 
-// import { ChevronDownIcon } from '@heroicons/react/solid'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -105,7 +104,7 @@ export default function ShareToSocial({ chroniqueTitle, chroniqueDescription, sl
                         <Menu.Item>
                         {({ active }) => (
                             <a
-                            href={`https://twitter.com/intent/tweet?text=${chroniqueTitle}&url=https://www.versetchroniques.blog/chroniques/${slug}&via=versetchroniques`}
+                            href={`https://twitter.com/intent/tweet?text=${chroniqueTitle}%0A%0A&url=https://www.versetchroniques.blog/chroniques/${slug}&via=versetchroniques`}
                             target="_blank"
                             className={classNames(
                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
@@ -124,7 +123,7 @@ export default function ShareToSocial({ chroniqueTitle, chroniqueDescription, sl
                         <Menu.Item>
                         {({ active }) => (
                             <a
-                            href={`whatsapp://send?text=${chroniqueTitle}%20%20%20${chroniqueDescription}%20https://www.versetchroniques.blog/chroniques/${slug}`}
+                            href={`whatsapp://send?text=*${chroniqueTitle.trim()}*%0A%0A%20%20%20${chroniqueDescription}%0A%0A%20https://www.versetchroniques.blog/chroniques/${slug}`}
                             target="_blank"
                             className={classNames(
                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',

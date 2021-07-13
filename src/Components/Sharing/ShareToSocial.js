@@ -10,7 +10,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function ShareToSocial({ chroniqueTitle, chroniqueDescription, slug }) {
+export default function ShareToSocial({ title, description, slug }) {
 
   return (
     <Menu as="div" className="relative inline-block text-left">
@@ -85,7 +85,7 @@ export default function ShareToSocial({ chroniqueTitle, chroniqueDescription, sl
                         <Menu.Item>
                         {({ active }) => (
                             <a
-                            href={`https://www.linkedin.com/shareArticle?mini=true&url=https://www.versetchroniques.blog/chroniques/${slug}&title=${chroniqueTitle}&summary=${chroniqueDescription}`}
+                            href={`https://www.linkedin.com/shareArticle?mini=true&url=https://www.versetchroniques.blog/chroniques/${slug}&title=${title}&summary=${description}`}
                             target="_blank"
                             className={classNames(
                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
@@ -104,7 +104,7 @@ export default function ShareToSocial({ chroniqueTitle, chroniqueDescription, sl
                         <Menu.Item>
                         {({ active }) => (
                             <a
-                            href={`https://twitter.com/intent/tweet?text=${chroniqueTitle}%0A%0A&url=https://www.versetchroniques.blog/chroniques/${slug}&via=versetchroniques`}
+                            href={`https://twitter.com/intent/tweet?text=${title}%0A%0A&url=https://www.versetchroniques.blog/chroniques/${slug}&via=versetchroniques`}
                             target="_blank"
                             className={classNames(
                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
@@ -123,7 +123,7 @@ export default function ShareToSocial({ chroniqueTitle, chroniqueDescription, sl
                         <Menu.Item>
                         {({ active }) => (
                             <a
-                            href={`whatsapp://send?text=*${chroniqueTitle.trim()}*%0A%0A%20%20%20${chroniqueDescription}%0A%0A%20https://www.versetchroniques.blog/chroniques/${slug}`}
+                            href={`whatsapp://send?text=*${title.trim()}*%0A%0A%20%20%20${description}%0A%0A%20https://www.versetchroniques.blog/chroniques/${slug}`}
                             target="_blank"
                             className={classNames(
                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',

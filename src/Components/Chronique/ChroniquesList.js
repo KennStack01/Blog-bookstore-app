@@ -67,7 +67,7 @@ const ChroniquesList = () => {
                                         </button>
                                     </Link>
                                     <div className="z-100 ml-3 text-gray-600">
-                                        <ShareToSocial  chroniqueTitle={chronique.leTitreDeLaChronique} chroniqueDescription={chronique.descriptionDeLaChronique} slug={chronique.slug} />
+                                        <ShareToSocial  title={chronique.leTitreDeLaChronique} description={chronique.descriptionDeLaChronique} slug={chronique.slug} />
                                     </div>
                                 </div>
                             </div>

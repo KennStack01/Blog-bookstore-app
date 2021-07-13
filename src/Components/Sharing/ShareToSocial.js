@@ -51,8 +51,8 @@ export default function ShareToSocial({ title, description, slug }) {
                                 'block mx-auto px-4 py-2 text-sm font-semibold cursor-pointer'
                             )}
                             >
-                                <p className="flex flex-col mx-3 text-xs">
-                                    <span>
+                                <p className="flex flex-col text-xs">
+                                    <span className="mx-auto">
                                         Partager avec les Amis😍  <br /> 
                                     </span>
                                     <span className="text-xs text-gray-500 font-light mx-auto">En un Clic!</span>

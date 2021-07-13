@@ -11,7 +11,8 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function ShareToSocial() {
+export default function ShareToSocial({ chroniqueTitle, chroniqueDescription }) {
+
   return (
     <Menu as="div" className="relative inline-block text-left">
         {({ open }) => (

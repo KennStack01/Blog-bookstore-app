@@ -1,10 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
-import { HiOutlineShare } from 'react-icons/hi'
-
-
-import Modal from 'react-modal'
-import SharingModal from '../Sharing/SharingModal'
 import ShareToSocial from '../Sharing/ShareToSocial'
 
 
@@ -67,30 +62,13 @@ const ChroniquesList = () => {
                                 </div>
                                 <div className="flex flex-row justify-end mt-2 mr-5">
                                     <Link to={`/chroniques/${chronique.slug}`}>
-                                        <button className="px-5 py-2 text-white bg-mirage-300 hover:bg-mirage-500 rounded">
+                                        <button className="px-5 py-2 text-white bg-yellow-500 hover:bg-yellow-600 rounded">
                                             Lire
                                         </button>
                                     </Link>
                                     <div className="z-100 ml-3 text-gray-600">
                                         <ShareToSocial/>
                                     </div>
-                                    {/* <div onClick={openModal} className="text-3xl mx-3 cursor-pointer">
-                                        <HiOutlineShare/>
-                                    </div> */}
-                                    {/* <div className="!z-50 justify-center items-center animated fadeInUp">
-                                        <Modal
-                                            isOpen={modalIsOpen}
-                                            onRequestClose={closeModal}
-                                            shouldCloseOnOverlayClick={true}
-                                            style={customStyles}>
-                                            <SharingModal/>
-                                            <div>
-                                                <button onClick={() => setIsOpen(false)} className="mt-7 mb-1 p-2">
-                                                    Fermer
-                                                </button>
-                                            </div>
-                                        </Modal>
-                                    </div> */}
                                 </div>
                             </div>
                         </section>

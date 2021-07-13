@@ -11,7 +11,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function ShareToSocial({ chroniqueTitle, chroniqueDescription }) {
+export default function ShareToSocial({ chroniqueTitle, chroniqueDescription, slug }) {
 
   return (
     <Menu as="div" className="relative inline-block text-left">
@@ -67,7 +67,8 @@ export default function ShareToSocial({ chroniqueTitle, chroniqueDescription }) 
                         <Menu.Item>
                         {({ active }) => (
                             <a
-                            href="#"
+                            href={`https://www.facebook.com/sharer.php?u=https://www.versetchroniques.blog/chroniques/${slug}`}
+                            target="_blank"
                             className={classNames(
                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                 'block px-2 text-sm'
@@ -85,7 +86,8 @@ export default function ShareToSocial({ chroniqueTitle, chroniqueDescription }) 
                         <Menu.Item>
                         {({ active }) => (
                             <a
-                            href="#"
+                            href={`https://www.linkedin.com/shareArticle?mini=true&url=https://www.versetchroniques.blog/chroniques/${slug}&title=${chroniqueTitle}&summary=${chroniqueDescription}`}
+                            target="_blank"
                             className={classNames(
                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                 'block px-2 text-sm'
@@ -103,7 +105,8 @@ export default function ShareToSocial({ chroniqueTitle, chroniqueDescription }) 
                         <Menu.Item>
                         {({ active }) => (
                             <a
-                            href="#"
+                            href={`https://twitter.com/intent/tweet?text=${chroniqueTitle}&url=https://www.versetchroniques.blog/chroniques/${slug}&via=versetchroniques`}
+                            target="_blank"
                             className={classNames(
                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                 'block px-2 text-sm'
@@ -121,7 +124,8 @@ export default function ShareToSocial({ chroniqueTitle, chroniqueDescription }) 
                         <Menu.Item>
                         {({ active }) => (
                             <a
-                            href="#"
+                            href={`whatsapp://send?text=${chroniqueTitle}%20%20%20${chroniqueDescription}%20https://www.versetchroniques.blog/chroniques/${slug}`}
+                            target="_blank"
                             className={classNames(
                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                 'block px-2 text-sm'

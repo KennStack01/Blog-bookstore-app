@@ -7,3 +7,7 @@ html,
 body {
   overflow-x: hidden;
 }
+
+.multiline-text {
+  white-space: pre-wrap;
+}

@@ -8,7 +8,7 @@ export default function HeaderForChronique({ data }) {
         <section>
             <div>
                 {/* Add Previous page link path: <Link to=".."></Link> */}
-                <Link to='/' className="absolute z-50 bg-white text-3xl p-2 rounded-full ml-4 mt-4 shadow-md">
+                <Link to='/' className="absolute z-50 bg-white hover:bg-yellow-500 hover:text-white text-3xl p-2 rounded-full ml-4 mt-4 shadow-md">
                     <IoArrowBackSharp/>
                 </Link>
             </div>
@@ -29,7 +29,7 @@ export default function HeaderForChronique({ data }) {
                     <div className="bottom-0"></div>
                 </div>
             </div>
-            <div className="text-justify mx-2" dangerouslySetInnerHTML={{ __html: data.datoCmsChronique.contenuDeLaChroniqueNode.childMarkdownRemark.html }}></div>
+            <div className="text-justify font-light md:font-extralight mx-8 md:mx-20 multiline-text" dangerouslySetInnerHTML={{ __html: data.datoCmsChronique.contenuDeLaChroniqueNode.childMarkdownRemark.html }}></div>
         </section>
     )
 }

@@ -8,7 +8,7 @@ export default function HeaderForRecit({ data }) {
         <section>
             <div>
                 {/* Add Previous page link path: <Link to=".."></Link> */}
-                <Link to='/' className="absolute z-50 bg-white hover:bg-yellow-500 hover:text-white text-3xl p-2 rounded-full ml-4 mt-4 shadow-md">
+                <Link to='/recits' className="absolute z-50 bg-white hover:bg-yellow-500 hover:text-white text-3xl p-2 rounded-full ml-4 mt-4 shadow-md">
                     <IoArrowBackSharp/>
                 </Link>
             </div>

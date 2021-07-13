@@ -5,35 +5,11 @@ import { HiOutlineShare } from 'react-icons/hi'
 
 import Modal from 'react-modal'
 import SharingModal from '../Sharing/SharingModal'
+import ShareToSocial from '../Sharing/ShareToSocial'
 
-
-// Sharing functionalities (Modal)
-Modal.setAppElement('#___gatsby')
-
-const customStyles = {
-    content : {
-        top                   : '50%',
-        left                  : '50%',
-        right                 : 'auto',
-        bottom                : 'auto',
-        width                 : '20em',
-        marginRight           : '-50%',
-        transform             : 'translate(-50%, -50%)'
-    }
-}
 
 
 const ChroniquesList = () => {
-
-    const [modalIsOpen, setIsOpen] = useState(false)
-    const openModal = () => {
-        setIsOpen(true)
-    }
-    const closeModal = () => {
-        setIsOpen(false)
-    }
-
-    
 
     const data = useStaticQuery(graphql`
     query {
@@ -91,14 +67,17 @@ const ChroniquesList = () => {
                                 </div>
                                 <div className="flex flex-row justify-end mt-2 mr-5">
                                     <Link to={`/chroniques/${chronique.slug}`}>
-                                        <button className="px-5 py-1 text-white bg-mirage-300 hover:bg-mirage-500 rounded">
+                                        <button className="px-5 py-2 text-white bg-mirage-300 hover:bg-mirage-500 rounded">
                                             Lire
                                         </button>
                                     </Link>
-                                    <div onClick={openModal} className="text-3xl mx-3 cursor-pointer">
-                                        <HiOutlineShare/>
+                                    <div className="z-100 ml-3 text-gray-600">
+                                        <ShareToSocial/>
                                     </div>
-                                    <div className="!z-50 justify-center items-center animated fadeInUp">
+                                    {/* <div onClick={openModal} className="text-3xl mx-3 cursor-pointer">
+                                        <HiOutlineShare/>
+                                    </div> */}
+                                    {/* <div className="!z-50 justify-center items-center animated fadeInUp">
                                         <Modal
                                             isOpen={modalIsOpen}
                                             onRequestClose={closeModal}
@@ -111,7 +90,7 @@ const ChroniquesList = () => {
                                                 </button>
                                             </div>
                                         </Modal>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </section>

@@ -17,6 +17,7 @@ const RecitPoesie = () => {
                         titreDuRecit
                         descriptionDuRecit
                         dateDePublicationDuRecit
+                        slug
                     }
                 }
             }

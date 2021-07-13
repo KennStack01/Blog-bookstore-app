@@ -1,37 +1,10 @@
 import React, { useState }  from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
-import { HiOutlineShare } from 'react-icons/hi'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 
-import Modal from 'react-modal'
-import SharingModal from '../Sharing/SharingModal'
-
-
-// Sharing functionalities (Modal)
-
-Modal.setAppElement('#___gatsby')
-
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    width                 : '20em',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
-  }
-}
+import ShareToSocial from '../Sharing/ShareToSocial'
 
 
 const RecitPoesie = () => {
-
-    const [modalIsOpen, setIsOpen] = useState(false)
-    const openModal = () => {
-        setIsOpen(true)
-    }
-    const closeModal = () => {
-        setIsOpen(false)
-    }
 
     const data = useStaticQuery(graphql`
         query {
@@ -57,10 +30,10 @@ const RecitPoesie = () => {
         <div>
             <div className="flex flex-col lg:grid lg:grid-cols-2">
                 { allRecits.map( (recit) => (
-                        <section className={`flex flex-row bg-white h-32 w-auto md:w-90 rounded-l-lg border-r-4 ${borderColor[Math.floor(Math.random() * borderColor.length)]} shadow my-4 mx-2 transform transition duration-500 hover:scale-105`} key={recit.titreDuRecit}>
+                        <section className={`flex flex-row bg-white  w-auto md:w-90 rounded-l-lg border-r-4 ${borderColor[Math.floor(Math.random() * borderColor.length)]} shadow my-4 mx-2 transform transition duration-500 hover:scale-105`} key={recit.titreDuRecit}>
                             {/* Picture */}
                             <img
-                                className="w-32 h-32 md:w-48 md:h-32 object-cover object-center rounded-l-lg"
+                                className="w-32 md:w-48 md:h-32 object-cover object-center rounded-l-lg"
                                 src={recit.imageDuRecit.url}
                                 alt=""
                                 />
@@ -76,29 +49,14 @@ const RecitPoesie = () => {
                                     {`${recit.descriptionDuRecit.substring(0, 155)}...`}
                                 </p>
 
-                                <div className="flex flex-row justify-end my-2">
-                                    <button className="px-3 text-white bg-mirage-500">
-                                        Découvrir
-                                    </button>
-                                    <div onClick={openModal} className="text-2xl mx-3 cursor-pointer">
-                                        <HiOutlineShare/>
-                                    </div>
-                                    <div className="!z-50 justify-center items-center">
-                                        <Modal
-                                            isOpen={modalIsOpen}
-                                            onRequestClose={closeModal}
-                                            shouldCloseOnOverlayClick={true}
-                                            style={customStyles}>
-                                            <SharingModal/>
-                                            <div>
-                                                <button 
-                                                    onClick={() => setIsOpen(false)}
-                                                    className="mt-7 mb-1 p-2"
-                                                >
-                                                    Fermer
-                                                </button>
-                                            </div>
-                                        </Modal>
+                                <div className="flex flex-row justify-end text-sm my-2 mr-5">
+                                    <Link to={`/recits/${recit.slug}`}>
+                                        <button className="px-5 py-2 text-white bg-yellow-500 hover:bg-yellow-600 rounded">
+                                            Découvrir
+                                        </button>
+                                    </Link>
+                                    <div className="z-100 ml-3 text-gray-600">
+                                        <ShareToSocial  title={recit.titreDuRecit} description={recit.descriptionDuRecit} slug={recit.slug} />
                                     </div>
                                 </div>
                             </div>

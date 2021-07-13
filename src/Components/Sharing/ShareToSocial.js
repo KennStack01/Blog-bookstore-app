@@ -45,20 +45,19 @@ export default function ShareToSocial({ title, description, slug }) {
                     <div className="py-1">
                         <Menu.Item>
                         {({ active }) => (
-                            <Link
-                            to="/"
+                            <p
                             className={classNames(
                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                 'block mx-auto px-4 py-2 text-sm font-semibold cursor-pointer'
                             )}
                             >
-                                <p className="flex flex-col mx-3">
+                                <p className="flex flex-col mx-3 text-xs">
                                     <span>
-                                        Partager avec les Amis 😍  <br /> 
+                                        Partager avec les Amis😍  <br /> 
                                     </span>
                                     <span className="text-xs text-gray-500 font-light mx-auto">En un Clic!</span>
                                 </p>
-                            </Link>
+                            </p>
                         )}
                         </Menu.Item>
                     </div>

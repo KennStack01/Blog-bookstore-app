@@ -41,9 +41,9 @@ const RecitPoesie = () => {
                             {/* Title */}
                             <div className="flex flex-col justify-between">
                                 <div className="flex-grow m-auto text-mirage-500 text-center mx-2">
-                                    <div>
-                                        <h1 className="text-xs md:text-lg font-semibold mt-1"> {recit.titreDuRecit} </h1>
-                                    </div>
+                                    <Link to={`/recits/${recit.slug}`}>
+                                        <h1 className="text-xs md:text-lg font-semibold mt-1 hover:text-yellow-600 hover:underline"> {recit.titreDuRecit} </h1>
+                                    </Link>
                                 </div>
                                 {/* Description */}
                                 <p className="text-xs font-normal text-justify m-2 my-1">

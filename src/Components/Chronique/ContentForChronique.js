@@ -61,7 +61,7 @@ export default function HeaderForChronique({ data }) {
                 </div>
                 <div className="text-justify font-light md:font-extralight mx-8 md:mx-20 multiline-text" dangerouslySetInnerHTML={{ __html: data.datoCmsChronique.contenuDeLaChroniqueNode.childMarkdownRemark.html }}></div>
             </section>
-            <div className="mt-12">
+            <div className="mt-16">
                 <div className="divide-y divide-mirage-500 mx-2">
                         <div className="bottom-0"></div>
                         <div className="bottom-0"></div>
